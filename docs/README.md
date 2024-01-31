@@ -7,19 +7,9 @@
 |氏名|高橋大地 (Takahashi, Daichi)|
 |生年月|1991年6月|
 |居住地|東京都|
-|最終学歴|筑波大学大学院 人間総合科学研究科 芸術専攻|
+|最終学歴|筑波大学大学院 人間総合科学研究科 芸術専攻 修了（修士デザイン学）|
 |GitHub|https://github.com/daichitakahashi|
 |Zenn|https://zenn.dev/daichitakahashi|
-
-<!--
-## 意欲・関心
-* 開発チームのエンパワー
-  * 開発チームに潜む課題を発見し、解決策の探究と改善を通じてチームを前に進める
-  * 実現可能な解決策を導くことで、チームメンバーのより前向きな姿勢を導く
-* アーキテクチャ選定
-  * アーキテクチャの検討をビジネスサイドとエンジニアサイドの界面として捉える
-  * 何を、何のためにやるのかを明確にして、開発に取り組む
--->
 
 ## スキル
 ### 開発言語
@@ -30,17 +20,29 @@
   - AST操作を用いたコード生成ツールの作成
 - JavaScript
 - TypeScript
-  - フロントエンド開発、CI/CDのスクリプト記述等で使用
+  - フロントエンド開発のほか、Cloudflare Workersを使用したフルスタックな開発に使用
+
+<div class="newpage"></div>
 
 ### フレームワーク/ライブラリ
 - [99designs/gqlgen](https://github.com/99designs/gqlgen)
 - [sqlc-dev/sqlc](https://github.com/sqlc-dev/sqlc)
 - [labstack/echo](https://github.com/labstack/echo)
+- [gin-gonic/gin](https://github.com/gin-gonic/gin)
+- [connectrpc/connect-go](https://github.com/connectrpc/connect-go)
+- [golangci/golangci-lint](https://github.com/golangci/golangci-lint)
 - [React](https://github.com/facebook/react)
+- [Remix](https://github.com/remix-run/remix)
+- [Hono](https://github.com/honojs/hono)
+- [Drizzle](https://github.com/drizzle-team/drizzle-orm)
+- [Pulumi](https://github.com/pulumi/pulumi)
+- [Biome](https://github.com/biomejs/biome)
+- [Playwright](https://github.com/microsoft/playwright)
 
 ### データストア
 - MySQL
 - PostgreSQL
+- SQLite3
 - Redis
 
 ### 通信プロトコル
@@ -50,28 +52,65 @@
 
 スキーマファーストなAPI設計/実装を得意としている。
 
-### PaaS
+### PaaS, BaaS
 - AWS
-  - 業務ではECS、LambdaやAurora(MySQL), ElastiCache(Redis), OpenSearch Service等を使用
+  - 業務ではECS Fargate、LambdaやAurora(MySQL), ElastiCache(Redis), OpenSearch Service等を使用
+- Cloudflare
+  - Cloudflare Workers, Cloudflare Pagesを活用して社内用アプリケーションを構築
+  - Cloudflare Zero Trustを活用した社内システムの保護
+- supabase
 
 ### その他ツール
 - Docker
   - アプリケーション開発の他に、テスト環境の整備の一環としてコンテナイメージ開発を行う
-- Playwright
 - GitLab
   - 業務で使用
-  - CI/CDパイプラインの設計
+  - 社内でホストしたCIランナーの運用、保守
+  - CI/CDパイプラインの設計、構築
 - GitHub
-  - 個人開発で使用
-
-### 設計手法
-- ドメイン駆動設計
-- レイヤードアーキテクチャ
+  - 業務、個人開発で使用
+  - CI/CDパイプラインの設計、構築
+- [VitePress](https://github.com/vuejs/vitepress)
+  - 社内用ドキュメントの管理
+- [k1LoW/tbls](https://github.com/k1LoW/tbls)
+  - データベースからのER図生成
 
 ---
 
 ## 職務経歴
-### 株式会社クオリティア(2020年4月〜)
+### コウソミル株式会社(2024年10月〜)
+*システムエンジニア*
+
+疾患の早期診断薬を開発するスタートアップに、検査体制を支える社内システムを開発する1人目のエンジニアとして参加。
+
+#### <u>検査追跡システム開発(2024年10月〜)</u>
+- **プロジェクトの規模**
+  - 7名（エンジニア1名、検査チーム6名）
+- **プロジェクト詳細**
+  - 受注した検査の適切な進行を補助し、記録を追跡可能にするためのシステム
+  - 提携企業とのAPI連携
+- **役割**
+  - 検査チームからのヒアリング、要件定義
+  - システム設計
+    - Cloudflare PagesとCloudflare Workersを使用
+    - Cloudflare Workersはサービス単位で開発
+      - プロジェクト管理サービス、受注サービス、検査進行管理サービス、在庫管理サービス
+    - Cloudflare Zero Trustによるアクセス制限
+  - Figmaを使用した画面設計
+  - コードファーストでのテーブル設計
+    - supabaseが提供するPostgreSQLを使用
+    - サービス単位でのDB分割
+    - tblsを使用したER図の自動生成
+  - ER図やシステム関連図等各種ドキュメントの作成、管理
+  - CI/CDパイプラインの設計
+    - IaCとしてPulumiを採用
+  - 開発
+  - 今後の業務
+    - テスト
+    - 運用、監視
+    - API連携に関する提携企業との調整
+
+### 株式会社クオリティア(2020年4月〜2023年9月)
 *クラウドサービス本部 開発部 主任*
 
 バックエンドエンジニアとしてSaaS型のWebメール製品と認証基盤製品の開発に従事。
@@ -94,7 +133,7 @@ APIの設計、開発に取り組むほか、脆弱性やパフォーマンス�
   - CI/CDパイプラインの設計/実装
   - TypeScript+ReactでのSPA開発のサポート
   - 品質管理部によるE2Eテストプロジェクトのサポート（Playwright）
-  - 再設計に伴い、ドメイン駆動設計、モジュラモノリスの導入
+  - 再設計に伴い、モジュラモノリスの導入
   - ユニットテスト作成のリード
 
 #### <u>認証基盤製品開発（2021年10月〜2022年8月）</u>
@@ -138,3 +177,6 @@ APIの設計、開発に取り組むほか、脆弱性やパフォーマンス�
   - コンテナを使用した並列テストのためのテストヘルパー(Go)
   - 紹介記事
     - https://zenn.dev/daichitakahashi/articles/9e091863f158b7
+- [daichitakahashi/rsmap](https://github.com/daichitakahashi/rsmap/)
+  - 並列テストにおけるプロセス外のリソース使用の排他制御を行うテストヘルパー(Go)
+  - confortの後継として開発中
