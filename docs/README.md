@@ -29,8 +29,6 @@
 - TypeScript
   - フロントエンド開発のほか、Cloudflare Workersを使用したフルスタックな開発に使用
 
-<div class="newpage"></div>
-
 ### フレームワーク/ライブラリ
 - [99designs/gqlgen](https://github.com/99designs/gqlgen)
 - [sqlc-dev/sqlc](https://github.com/sqlc-dev/sqlc)
